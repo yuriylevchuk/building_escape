@@ -1,21 +1,21 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Yuriy Levchuk 2020.
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/ActorComponent.h"
-#include "PositionReporter.generated.h"
+#include "OpenDoor.generated.h"
+
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class BUILDINGESCAPE_API UPositionReporter : public UActorComponent
+class BUILDINGESCAPE_API UOpenDoor : public UActorComponent
 {
-
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UPositionReporter();
+	UOpenDoor();
 
 protected:
 	// Called when the game starts
