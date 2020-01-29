@@ -5,5 +5,8 @@ DerivedDataCache/
 Build/
 Content/StarterContent/
 .vs/
+.vscode/
 
 *.VC.db
+*.sln
+*.code-workspace

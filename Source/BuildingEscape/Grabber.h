@@ -3,14 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
 #include "Components/ActorComponent.h"
-#include "Engine/World.h"
-#include "GameFramework/PlayerController.h"
-#include "DrawDebugHelpers.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
+#include "GameFramework/PlayerController.h"
+#include "Components/PrimitiveComponent.h"
+#include "Engine/World.h"
 #include "Grabber.generated.h"
-
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class BUILDINGESCAPE_API UGrabber : public UActorComponent
@@ -32,4 +30,17 @@ public:
 private:
 	float Reach = 100.0f;
 	UPhysicsHandleComponent* PhysicsHandle = nullptr;
+	UInputComponent* InputComponent = nullptr;
+
+	// Input action Grab
+	void Grab();
+
+	void Release();
+
+	void FindPhysicsHandleComponent();
+	void SetupInputComponent();
+	
+	FHitResult GetFirstPhysicsBodyInReach() const;
+	FVector GetReachLineStart() const;
+	FVector GetReachLineEnd() const;
 };
